@@ -12,15 +12,74 @@
 199.232.69.194 github.global.ssl.fastly.net
 ```
 
+对于linux，打开hosts，
+
+```shell
+sudo gedit /etc/hosts
+```
+
+再将以下内容添加到最后
+
+```shell
+140.82.113.3 github.com
+185.199.108.154 github.githubassets.com
+185.199.109.154 github.githubassets.com
+185.199.110.154 github.githubassets.com
+185.199.111.154 github.githubassets.com
+185.199.108.154 github.githubassets.com
+185.199.109.154 github.githubassets.com
+185.199.110.154 github.githubassets.com
+185.199.111.154 github.githubassets.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 camo.githubusercontent.com
+199.232.68.133 github.map.fastly.net
+199.232.68.133 github.map.fastly.net
+199.232.69.194 github.global.ssl.fastly.net
+199.232.69.194 github.global.ssl.fastly.net
+140.82.113.5 api.github.com
+140.82.113.5 api.github.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 raw.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 user-images.githubusercontent.com
+199.232.68.133 favicons.githubusercontent.com
+199.232.68.133 favicons.githubusercontent.com
+151.101.113.194 github.global.ssl.fastly.net
+192.30.253.112 github.com
+```
+
+[完美解决github访问速度慢]: https://zhuanlan.zhihu.com/p/93436925
+[解决Linux访问Github速度慢的问题]: https://blog.csdn.net/qq_17403617/article/details/118584780
+
 ### Github访问慢
 
 访问[该网站](https://github.com.ipaddress.com/)获得一个访问Github最快的IP地址，在浏览器直接输入该IP地址访问。
 
 此外也可以将该IP地址写入hosts文件中，然后在cmd下运行命令 `ipconfig /flushdns`刷新DNS缓存。
 
+或者关闭无线网重连。
+
 参考：
 
 https://zhuanlan.zhihu.com/p/353522535
+
+### git push 失败
+
+类似如下错误
+
+```shell
+remote: Support for password authentication was removed on August 13, 2021. Please use a personal access token instead.
+remote: Please see https://github.blog/2020-12-15-token-authentication-requirements-for-git-operations/ for more information.
+fatal: Authentication failed for 'https://github.com/jinbooooom/git.git/'
+```
+
+可以先创建`token`,参考[关于2021年8月13日github不再支持密码身份验证的解决方案](https://blog.csdn.net/qq_42714262/article/details/119706383)，然后使用命令，设置repo。
+
+```shell
+git remote set-url origin https://your_token@github.com/your_account/your_repo_name.git
+# such as
+git remote set-url origin https://your_token@github.com/jinbooooom/git.git
+```
 
 ## 提交规范
 
