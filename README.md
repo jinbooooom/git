@@ -2,7 +2,7 @@
 
 ## 内网无法访问`Github`的问题 
 
-### [Github能ping但打不开（即使使用VPN）](https://blog.csdn.net/sinat_35811978/article/details/80289219)
+### Github能ping但打不开（即使使用VPN）
 
 打开`C:\Windows\System32\drivers\etc\hosts`，注释掉带有`github.com`的行
 
@@ -48,6 +48,8 @@ sudo gedit /etc/hosts
 192.30.253.112 github.com
 ```
 
+如果能ping但是在浏览器里打不开github，还是把刚才添加的内容删掉吧，然后关掉无线网重启后，再登录github，秒开。
+
 [完美解决github访问速度慢]: https://zhuanlan.zhihu.com/p/93436925
 [解决Linux访问Github速度慢的问题]: https://blog.csdn.net/qq_17403617/article/details/118584780
 
@@ -55,13 +57,11 @@ sudo gedit /etc/hosts
 
 访问[该网站](https://github.com.ipaddress.com/)获得一个访问Github最快的IP地址，在浏览器直接输入该IP地址访问。
 
-此外也可以将该IP地址写入hosts文件中，然后在cmd下运行命令 `ipconfig /flushdns`刷新DNS缓存。
+![](assets/README/截图_选择区域_20220119232726.png)
+
+将该IP地址写入hosts文件中，然后在cmd下运行命令 `ipconfig /flushdns`刷新DNS缓存。
 
 或者关闭无线网重连。
-
-参考：
-
-https://zhuanlan.zhihu.com/p/353522535
 
 ### git push 失败
 
