@@ -111,6 +111,7 @@ $ git merge [branch-name]
 
 # 删除分支
 $ git branch -d [branch-name]
+$ git branch -D [branch-name]
 
 # 删除远程分支
 $ git push origin --delete <branch-name>
