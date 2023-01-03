@@ -106,6 +106,7 @@ note 与 doc：note指记录对某一知识总结的笔记文档，而doc指某�
 - note/doc style：修改文档格式、错别字等不影响内容的提交
 - note/doc refactor：文档内容的重新整理，涉及到大面积的修改，但不影响文档的主题
 - sources：添加资源，如pdf文档，书中代码实例的压缩包等
+- c/cpp/java/python/shell：表明是非笔记的其他编程语言
 
 *代码：*
 

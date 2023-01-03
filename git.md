@@ -341,7 +341,35 @@ user@jinbo:t$ git merge branch_c6_c8
 
 第三种方式也是把需要修改的记录调整为最新的提交，然后使用2的方式修改
 
-### 推荐阅读
+## 打 patch
+
+### 对未提交的代码打 patch
+
+```shell
+# 对指定的文件的修改打 patch
+git diff 文件名 > test.patch
+
+# 由于没有指定修改的文件，所以默认把所有修改的文件都打 patch，同时还需要注意，这里是本地修改的没有执行add缓存的
+git diff > test.patch  
+
+# 如果已经执行git add，再想打 patch 可以使用
+git diff --cached >  test.patch
+```
+
+### 对提交的代码打 patch
+
+```shell
+git format-patch commit_id1 commit_id2  
+# 也可以使用 git format-patch -1 ，指为最近 1 次提交的代码打 patch,-2 指为最近的两次提交打 patch，会生成两个文件，分别是两次提交的 patch)
+```
+
+### 应用 patch
+
+```shell
+git am xxx.patch
+```
+
+## 推荐阅读
 
 - http://gityuan.com/2015/06/27/git-notes/
 - [**Git Magic**](http://www-cs-students.stanford.edu/~blynn/gitmagic/intl/zh_cn/pr01.html)
