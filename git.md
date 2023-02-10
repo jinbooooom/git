@@ -116,6 +116,9 @@ $ git branch -D [branch-name]
 # 删除远程分支
 $ git push origin --delete <branch-name>
 $ git branch -dr <remote/branch>
+
+# 修改本地分支名字
+git branch -m old-name new-name
 ```
 
 ### 查看信息
