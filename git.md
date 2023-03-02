@@ -109,6 +109,9 @@ $ git checkout [branch-name]
 # 合并指定分支到当前分支
 $ git merge [branch-name]
 
+# 推送分支到远程
+$ git push origin [branch-name]
+
 # 删除分支
 $ git branch -d [branch-name]
 $ git branch -D [branch-name]
